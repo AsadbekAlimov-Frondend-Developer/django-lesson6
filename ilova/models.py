@@ -1,22 +1,10 @@
 from django.db import models
 
-# Create your models here.
+class Film(models.Model):
+    title = models.CharField(max_length=255)       
+    genre = models.CharField(max_length=100)       
+    year = models.PositiveIntegerField()           
+    rating = models.DecimalField(max_digits=3, decimal_places=1) 
 
-class Yangiliklar(models.Model):
-    title = models.CharField(max_length=512)
-    content = models.TextField()
-    image = models.ImageField(upload_to='images/')
-    author = models.CharField(max_length=256)
-
-
-    def __str__(self):
-        return self.title
-
-
-class Kitob(models.Model):
-    title=models.CharField(max_length=256)
-    page_count=models.IntegerField()
-    author=models.CharField(max_length=256)
-   
     def __str__(self):
         return self.title
